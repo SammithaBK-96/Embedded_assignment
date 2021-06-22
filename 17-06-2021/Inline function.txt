@@ -1,0 +1,27 @@
+Inline Function :
+
+Inline Function are those function whose definitions are small and be substituted at the place where its function call is happened.
+
+
+When a programmer defines a function with the inline keyword (or defines it inside a class definition, thereby making it inline by default), the
+expected result is for the function to be inlined everywhere the function is called. This approach improves performance by eliminating the overhead of a function call. 
+
+inline foo()
+{
+return 10;
+}
+
+int main()
+{
+foo();
+}
+
+Error : Undefined defination to foo() function(foo is a inline function)
+
+above error is due to the compiler cannot inline the function. This is typically caused by a flow-of-control complexity 
+that prevents the optimizer from inlining the function. 
+In these cases, the compiler reverts to treating the function as a regular function.To resolve this error add static keyword before the 
+inline. Using static keyword forces the compiler to consider this inline function in the linker, and hence the program compiles and run successfully.
+
+
+
